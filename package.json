@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt-ts",
+    "dev-server": "node api/server.js",
     "build": "nuxt-ts build",
     "start": "nuxt-ts start",
     "generate": "nuxt-ts generate",
