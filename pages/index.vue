@@ -6,12 +6,12 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import axios from '@nuxtjs/axios';
 
 export default Vue.extend({
 
   async fetch() {
-    this.boards = await fetch('http://localhost:3000/api/boards').then(res => res.json());
+    // 環境によってパスの参照先を変えたい
+    this.boards = await fetch('http://trello-dev.ap-northeast-1.elasticbeanstalk.com/api/boards').then(res => res.json());
   },
 
   data() {

@@ -45,20 +45,20 @@ export default Vue.extend({
 });
 </script>
 
-<style lang="scss">
+<style>
 div.draggable-wrapper {
-  display: flex;
+  display: flex;  
+}
 
-  div.board-list {
-    width: 100%;
-    display: inline-block;
-    text-align: center;
-    width: 34%;
-  }
+div.board-list {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  width: 34%;
+}
 
-  div.board-list-lane {
-    background: #ccc;
-  }  
+div.board-list-lane {
+  background: #ccc;
 }
 
 </style>
