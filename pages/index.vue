@@ -11,7 +11,11 @@ export default Vue.extend({
 
   async fetch() {
     // 環境によってパスの参照先を変えたい
-    this.boards = await fetch('http://trello-dev.ap-northeast-1.elasticbeanstalk.com/api/boards').then(res => res.json());
+    this.boards = await fetch(`${process.env.baseUrl}/api/boards`).then(res => res.json());
+  },
+
+  mounted() {
+    console.log(process.env.baseUrl)
   },
 
   data() {
