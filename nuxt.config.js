@@ -1,5 +1,4 @@
 export default {
-
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'trello',
@@ -12,7 +11,7 @@ export default {
   },
 
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -42,4 +41,4 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
-}
+};
