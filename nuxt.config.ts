@@ -1,6 +1,6 @@
 export default {
   srcDir: './client/',
-  serverMiddleware: ['~~/api/'],
+  serverMiddleware: ['~~/server/api/'],
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'trello',
