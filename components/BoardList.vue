@@ -1,19 +1,19 @@
 <template>
   <div>
-    <Draggable 
+    <Draggable
       group="boards"
       draggable=".board-list"
       handle=".handle"
       :animation="300"
       class="draggable-wrapper"
     >
-      <div v-for="(board, index) in value" class="board-list" :key="index">
+      <div v-for="(board, index) in value" :key="index" class="board-list">
         <div class="handle board-list-lane">
           {{ board.title }}
         </div>
 
         <Draggable group="items" :animation="300">
-          <div v-for="(item, index) in board.items" :key="index">
+          <div v-for="(item, i) in board.items" :key="i">
             {{ item.name }}
           </div>
         </Draggable>
@@ -24,30 +24,30 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import Draggable from 'vuedraggable'
+import Draggable from 'vuedraggable';
 
 export default Vue.extend({
-  name: "BoardList",
+  name: 'BoardList',
 
   components: {
     Draggable,
   },
 
   props: {
-    value: {}
+    value: {},
   },
 
   methods: {
     emitter(value: any) {
-      this.$emit("input", value);
+      this.$emit('input', value);
     },
-  }
+  },
 });
 </script>
 
 <style>
 div.draggable-wrapper {
-  display: flex;  
+  display: flex;
 }
 
 div.board-list {
