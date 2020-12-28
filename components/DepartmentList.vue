@@ -1,17 +1,18 @@
 <template>
   <div>
     <!-- draggableとhandleは不要かも -->
-    <Draggable group="boards" :animation="300" class="draggable-wrapper">
-      <div v-for="(board, index) in value" :key="index" class="board-list">
-        <div class="handle board-list-lane">
-          {{ board.title }}
+    <Draggable group="departments" :animation="300" class="draggable-wrapper">
+      <div
+        v-for="(department, index) in value"
+        :key="index"
+        class="department-list"
+      >
+        <div class="handle department-list-lane">
+          {{ department.name }}
         </div>
-
-        <Draggable group="items" :animation="300">
-          <div v-for="(item, i) in board.items" :key="i">
-            {{ item.name }}
-          </div>
-        </Draggable>
+        <div class="department-children">
+          <DepartmentList v-model="department.children" />
+        </div>
       </div>
     </Draggable>
   </div>
@@ -22,7 +23,7 @@ import Vue from 'vue';
 import Draggable from 'vuedraggable';
 
 export default Vue.extend({
-  name: 'BoardList',
+  name: 'DepartmentList',
 
   components: {
     Draggable,
@@ -45,14 +46,13 @@ div.draggable-wrapper {
   display: flex;
 }
 
-div.board-list {
+div.department-list {
   width: 100%;
   display: inline-block;
   text-align: center;
-  width: 34%;
 }
 
-div.board-list-lane {
+div.department-list-lane {
   background: #ccc;
 }
 </style>
