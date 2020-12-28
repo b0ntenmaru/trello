@@ -1,12 +1,7 @@
 <template>
   <div>
-    <Draggable
-      group="boards"
-      draggable=".board-list"
-      handle=".handle"
-      :animation="300"
-      class="draggable-wrapper"
-    >
+    <!-- draggableとhandleは不要かも -->
+    <Draggable group="boards" :animation="300" class="draggable-wrapper">
       <div v-for="(board, index) in value" :key="index" class="board-list">
         <div class="handle board-list-lane">
           {{ board.title }}
@@ -60,5 +55,4 @@ div.board-list {
 div.board-list-lane {
   background: #ccc;
 }
-
 </style>
