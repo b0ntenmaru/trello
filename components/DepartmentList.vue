@@ -1,7 +1,13 @@
 <template>
   <div>
     <!-- draggableとhandleは不要かも -->
-    <Draggable group="departments" :animation="300" class="draggable-wrapper">
+    <Draggable
+      group="departments"
+      :animation="300"
+      class="draggable-wrapper"
+      :value="value"
+      @input="emitter"
+    >
       <div
         v-for="(department, index) in value"
         :key="index"

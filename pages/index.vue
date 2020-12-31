@@ -1,6 +1,11 @@
 <template>
   <div class="index">
-    <DepartmentList v-model="departments" />
+    <div>
+      <DepartmentList v-model="departments" />
+    </div>
+    <div class="tree-data">
+      {{ departmentsTree }}
+    </div>
   </div>
 </template>
 
@@ -19,5 +24,29 @@ export default Vue.extend({
       departments: null,
     };
   },
+
+  computed: {
+    departmentsTree() {
+      return JSON.stringify(this.departments);
+    },
+  },
+
+  watch: {
+    departments: {
+      handler(newVal, oldVal) {
+        console.log('-------------------------')
+        console.log(`new: ${JSON.stringify(newVal)}`);
+        console.log(`old: ${JSON.stringify(oldVal)}}`);
+      },
+      deep: true,
+    },
+  },
 });
 </script>
+
+<style scoped lang="scss">
+div.tree-data {
+  position: absolute;
+  top: 50%;
+}
+</style>
