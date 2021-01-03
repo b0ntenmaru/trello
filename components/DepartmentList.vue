@@ -7,6 +7,7 @@
       class="draggable-wrapper"
       :value="value"
       @input="emitter"
+      @end="end"
     >
       <div
         v-for="(department, index) in value"
@@ -42,6 +43,11 @@ export default Vue.extend({
   methods: {
     emitter(value: any) {
       this.$emit('input', value);
+    },
+
+    end(event: any) {
+      console.log(event.from);
+      // console.log(event.to);
     },
   },
 });

@@ -27,16 +27,16 @@ export default Vue.extend({
 
   computed: {
     departmentsTree() {
-      return JSON.stringify(this.departments);
+      return JSON.stringify(this.departments, undefined, 2);
     },
   },
 
   watch: {
     departments: {
       handler(newVal, oldVal) {
-        console.log('-------------------------')
-        console.log(`new: ${JSON.stringify(newVal)}`);
-        console.log(`old: ${JSON.stringify(oldVal)}}`);
+        // console.log('-------------------------')
+        // console.log(`new: ${JSON.stringify(newVal)}`);
+        // console.log(`old: ${JSON.stringify(oldVal)}}`);
       },
       deep: true,
     },
